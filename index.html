@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M-Tech — Bureautique, impression et services numériques à Foumban</title>
+  <meta name="description" content="M-Tech, votre centre de bureautique à Kounga, Foumban : impression, photocopie, saisie, infographie, inscriptions en ligne, CV, maintenance informatique et formation. Devis gratuit sur WhatsApp.">
+  <meta name="theme-color" content="#1366d6">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="M-Tech — Bureautique à Foumban, Kounga">
+  <meta property="og:description" content="Impression, saisie, infographie, services en ligne, informatique et formation. Devis gratuit sur WhatsApp.">
+  <meta property="og:image" content="assets/img/logo.svg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Appliqué avant l'affichage : évite un flash de thème au chargement. -->
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      var t = localStorage.getItem("mtech-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!-- Bibliothèque d'icônes, réutilisées partout via <use href="#..."> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.59-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></g></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.59 7.59"/><circle cx="11" cy="11" r="2"/></g></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></g></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></g></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></g></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></g></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></g></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></g></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></g></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ============================================================ ENTÊTE -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="brand" href="#accueil" aria-label="M-Tech, retour à l'accueil">
+        <img src="assets/img/logo.svg" alt="" width="40" height="40">
+        <span>M-Tech<span class="brand__sub">Bureautique · Foumban</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#atouts">Pourquoi nous</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav__cta"><a href="#contact" data-link="whatsapp">Écrire sur WhatsApp</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Basculer le thème clair / sombre">
+          <svg class="icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn--primary header__cta" href="#contact">Demander un devis</a>
+        <button class="icon-btn burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-controls="nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================ HERO -->
+    <section class="hero" id="accueil">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <span class="eyebrow">Kounga · Foumban</span>
+          <h1>Votre partenaire <em>bureautique</em> à Foumban</h1>
+          <p class="hero__lead">
+            Impression, saisie, infographie, démarches en ligne, dépannage informatique et formation :
+            M-Tech prend en charge tous vos travaux, avec soin et dans les délais.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--wa" href="#contact" data-link="whatsapp">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg>
+              Écrire sur WhatsApp
+            </a>
+            <a class="btn btn--ghost" href="#services">
+              Voir nos services
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <div class="hero__stats">
+            <div><b>30+</b><span>prestations</span></div>
+            <div><b>6j/7</b><span>ouvert</span></div>
+            <div><b>0 F</b><span>le devis</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="hero__visual-title">Chez M-Tech <small>Kounga, Foumban</small></div>
+          <div class="hero__visual-row">
+            <i><svg><use href="#i-print"/></svg></i>
+            <div><b>Impression &amp; photocopie</b><small>Noir &amp; blanc, couleur, reliure</small></div>
+          </div>
+          <div class="hero__visual-row hero__visual-row--accent">
+            <i><svg><use href="#i-pen"/></svg></i>
+            <div><b>Infographie</b><small>Cartes, flyers, affiches, logos</small></div>
+          </div>
+          <div class="hero__visual-row hero__visual-row--green">
+            <i><svg><use href="#i-globe"/></svg></i>
+            <div><b>Services en ligne</b><small>Concours, dossiers, CV</small></div>
+          </div>
+          <div class="hero__visual-row hero__visual-row--dark">
+            <i><svg><use href="#i-monitor"/></svg></i>
+            <div><b>Informatique &amp; formation</b><small>Dépannage, logiciels, cours</small></div>
+          </div>
+          <span class="hero__badge">Devis gratuit sur WhatsApp</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Nos services</span>
+          <h2>Tout pour vos documents, au même endroit</h2>
+          <p>Élèves, étudiants, commerçants, associations ou administrations : M-Tech répond à vos besoins du quotidien comme à vos projets plus importants.</p>
+        </div>
+
+        <div class="grid grid--4">
+          <article class="card reveal">
+            <div class="card__icon"><svg aria-hidden="true"><use href="#i-print"/></svg></div>
+            <h3>Bureautique</h3>
+            <p>Vos documents saisis, imprimés et finis proprement.</p>
+            <ul class="card__list">
+              <li>Saisie et traitement de texte</li>
+              <li>Impression noir &amp; blanc et couleur</li>
+              <li>Photocopie</li>
+              <li>Scan et numérisation</li>
+              <li>Plastification</li>
+              <li>Reliure</li>
+            </ul>
+            <a class="card__cta" href="#contact" data-link="whatsapp" data-wa="Bureautique (saisie, impression, photocopie…)">
+              Demander ce service <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon"><svg aria-hidden="true"><use href="#i-pen"/></svg></div>
+            <h3>Infographie &amp; impression</h3>
+            <p>Des supports qui donnent une image professionnelle.</p>
+            <ul class="card__list">
+              <li>Cartes de visite</li>
+              <li>Flyers et affiches</li>
+              <li>Bâches et banderoles</li>
+              <li>Création de logos</li>
+              <li>Faire-part et invitations</li>
+              <li>Photos d'identité</li>
+            </ul>
+            <a class="card__cta" href="#contact" data-link="whatsapp" data-wa="Infographie et impression (cartes, flyers, logo…)">
+              Demander ce service <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon"><svg aria-hidden="true"><use href="#i-globe"/></svg></div>
+            <h3>Services en ligne</h3>
+            <p>Vos démarches faites pour vous, sans stress.</p>
+            <ul class="card__list">
+              <li>Inscriptions aux concours</li>
+              <li>Dossiers CNI, passeport, visa</li>
+              <li>Création d'adresse email</li>
+              <li>Rédaction de CV</li>
+              <li>Lettres de motivation</li>
+              <li>Cybercafé et navigation</li>
+            </ul>
+            <a class="card__cta" href="#contact" data-link="whatsapp" data-wa="Services en ligne (inscription, dossier, CV…)">
+              Demander ce service <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon"><svg aria-hidden="true"><use href="#i-monitor"/></svg></div>
+            <h3>Informatique &amp; formation</h3>
+            <p>Votre matériel entretenu, vos compétences renforcées.</p>
+            <ul class="card__list">
+              <li>Maintenance et dépannage PC</li>
+              <li>Installation de logiciels</li>
+              <li>Vente de fournitures de bureau</li>
+              <li>Formation Word</li>
+              <li>Formation Excel</li>
+              <li>Formation PowerPoint</li>
+            </ul>
+            <a class="card__cta" href="#contact" data-link="whatsapp" data-wa="Informatique et formation (dépannage, logiciels, cours…)">
+              Demander ce service <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== ATOUTS -->
+    <section class="section section--soft" id="atouts">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Pourquoi M-Tech</span>
+          <h2>Un service sérieux, à deux pas de chez vous</h2>
+          <p>Ce qui fait revenir nos clients à Kounga.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="feature reveal">
+            <i><svg aria-hidden="true"><use href="#i-zap"/></svg></i>
+            <div>
+              <h3>Rapide et soigné</h3>
+              <p>La plupart des travaux sont prêts le jour même, relus et vérifiés avant de vous être remis.</p>
+            </div>
+          </div>
+          <div class="feature reveal">
+            <i><svg aria-hidden="true"><use href="#i-tag"/></svg></i>
+            <div>
+              <h3>Des prix justes</h3>
+              <p>Des tarifs adaptés aux élèves et aux étudiants, et un devis gratuit avant chaque travail important.</p>
+            </div>
+          </div>
+          <div class="feature reveal">
+            <i><svg aria-hidden="true"><use href="#i-award"/></svg></i>
+            <div>
+              <h3>Un équipement fiable</h3>
+              <p>Imprimantes, scanner et ordinateurs entretenus pour un rendu net, page après page.</p>
+            </div>
+          </div>
+          <div class="feature reveal">
+            <i><svg aria-hidden="true"><use href="#i-user"/></svg></i>
+            <div>
+              <h3>Un accompagnement personnel</h3>
+              <p>Moustafa vous conseille et vous guide, surtout pour les démarches en ligne qui paraissent compliquées.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== À PROPOS -->
+    <section class="section" id="apropos">
+      <div class="container about">
+        <div class="about__text reveal">
+          <span class="eyebrow">À propos</span>
+          <h2>M-Tech, la bureautique de proximité à Kounga</h2>
+          <p>
+            Installé au quartier <strong>Kounga, à Foumban</strong>, M-Tech accompagne chaque jour les
+            habitants du Noun dans leurs travaux de bureau et leurs démarches numériques.
+          </p>
+          <p>
+            Notre conviction est simple : chacun doit pouvoir imprimer un mémoire, déposer un dossier
+            de concours ou faire réparer son ordinateur <strong>près de chez soi</strong>, à un prix
+            honnête et sans perdre de temps.
+          </p>
+          <a class="btn btn--primary" href="#contact">Nous rendre visite</a>
+        </div>
+
+        <div class="about__panel reveal">
+          <div class="about__owner">
+            <div class="about__avatar" aria-hidden="true">M</div>
+            <div>
+              <b data-config="responsable">Moustafa</b>
+              <span>Responsable de M-Tech</span>
+            </div>
+          </div>
+          <ul class="about__points">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Un interlocuteur unique qui suit votre travail du début à la fin.</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Des conseils clairs pour choisir le bon format, le bon papier, la bonne démarche.</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>La confidentialité de vos documents personnels, toujours respectée.</li>
+            <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-config="adresse">Kounga, Foumban — Région de l'Ouest, Cameroun</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== TARIFS -->
+    <!-- TODO Moustafa : remplacer les montants ci-dessous par vos vrais prix. -->
+    <section class="section section--soft" id="tarifs">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Tarifs</span>
+          <h2>Des prix clairs, sans surprise</h2>
+          <p>Quelques exemples de nos tarifs les plus courants.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="price reveal">
+            <h3>Impression &amp; copie</h3>
+            <p class="price__from">Pour vos documents du quotidien</p>
+            <ul class="price__lines">
+              <li><span>Impression N&amp;B</span><b>25 F / page</b></li>
+              <li><span>Impression couleur</span><b>100 F / page</b></li>
+              <li><span>Photocopie</span><b>25 F / page</b></li>
+              <li><span>Scan</span><b>100 F / page</b></li>
+              <li><span>Plastification A4</span><b>300 F</b></li>
+              <li><span>Reliure</span><b>dès 500 F</b></li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#contact" data-link="whatsapp" data-wa="Impression et photocopie">Commander</a>
+          </div>
+
+          <div class="price price--featured reveal">
+            <h3>Services en ligne</h3>
+            <p class="price__from">Vos démarches prises en charge</p>
+            <ul class="price__lines">
+              <li><span>Inscription concours</span><b>dès 1 000 F</b></li>
+              <li><span>Rédaction de CV</span><b>2 000 F</b></li>
+              <li><span>Lettre de motivation</span><b>1 000 F</b></li>
+              <li><span>Création d'email</span><b>500 F</b></li>
+              <li><span>Saisie</span><b>dès 300 F / page</b></li>
+              <li><span>Internet</span><b>300 F / heure</b></li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#contact" data-link="whatsapp" data-wa="Services en ligne">Commander</a>
+          </div>
+
+          <div class="price reveal">
+            <h3>Infographie</h3>
+            <p class="price__from">Pour votre image et vos événements</p>
+            <ul class="price__lines">
+              <li><span>Photos d'identité (×4)</span><b>1 000 F</b></li>
+              <li><span>Conception de flyer</span><b>dès 5 000 F</b></li>
+              <li><span>Cartes de visite (×100)</span><b>dès 10 000 F</b></li>
+              <li><span>Création de logo</span><b>dès 15 000 F</b></li>
+              <li><span>Faire-part</span><b>sur devis</b></li>
+              <li><span>Bâche</span><b>sur devis</b></li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#contact" data-link="whatsapp" data-wa="Infographie">Commander</a>
+          </div>
+        </div>
+
+        <p class="price-note reveal">Tarifs indicatifs en francs CFA. <strong>Devis gratuit</strong> sur demande pour tout travail en grande quantité ou personnalisé.</p>
+      </div>
+    </section>
+
+    <!-- ========================================================= CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Passez nous voir ou écrivez-nous</h2>
+          <p>Une question, un devis, un travail urgent ? Nous répondons rapidement, surtout sur WhatsApp.</p>
+        </div>
+
+        <div class="contact">
+          <div class="reveal">
+            <div class="contact__list">
+              <a class="contact__item" href="#contact" data-link="whatsapp">
+                <i><svg aria-hidden="true"><use href="#i-wa"/></svg></i>
+                <div><b>WhatsApp</b><span data-config="telephone">+237 6XX XX XX XX</span></div>
+              </a>
+              <a class="contact__item" href="#contact" data-link="tel">
+                <i><svg aria-hidden="true"><use href="#i-phone"/></svg></i>
+                <div><b>Téléphone</b><span data-config="telephone">+237 6XX XX XX XX</span></div>
+              </a>
+              <a class="contact__item" href="#contact" data-link="mailto">
+                <i><svg aria-hidden="true"><use href="#i-mail"/></svg></i>
+                <div><b>Email</b><span data-config="email">contact@m-tech.cm</span></div>
+              </a>
+              <div class="contact__item">
+                <i><svg aria-hidden="true"><use href="#i-pin"/></svg></i>
+                <div><b>Adresse</b><span data-config="adresse">Kounga, Foumban — Région de l'Ouest, Cameroun</span></div>
+              </div>
+              <div class="contact__item">
+                <i><svg aria-hidden="true"><use href="#i-clock"/></svg></i>
+                <div><b>Horaires</b><span data-config="horaires">Lundi – Samedi : 7h30 – 19h00 · Dimanche : fermé</span></div>
+              </div>
+            </div>
+
+            <div class="map">
+              <iframe
+                title="Plan d'accès à M-Tech, Kounga, Foumban"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=10.8800%2C5.7120%2C10.9200%2C5.7420&amp;layer=mapnik&amp;marker=5.7265%2C10.8998"
+                loading="lazy"
+                referrerpolicy="no-referrer"></iframe>
+            </div>
+          </div>
+
+          <form class="form reveal" id="quoteForm" novalidate>
+            <h3>Demander un devis</h3>
+            <p>Remplissez ces quelques champs : votre demande s'ouvrira directement dans WhatsApp, prête à être envoyée.</p>
+
+            <div class="field">
+              <label for="f-name">Votre nom</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Ex. : Aïcha Njoya">
+            </div>
+
+            <div class="field">
+              <label for="f-service">Service souhaité</label>
+              <select id="f-service" name="service">
+                <option>Bureautique (saisie, impression, photocopie…)</option>
+                <option>Infographie et impression (cartes, flyers, logo…)</option>
+                <option>Services en ligne (inscription, dossier, CV…)</option>
+                <option>Informatique et formation (dépannage, logiciels, cours…)</option>
+                <option>Autre demande</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="f-message">Votre message</label>
+              <textarea id="f-message" name="message" required placeholder="Décrivez votre besoin : quantité, format, délai…"></textarea>
+            </div>
+
+            <button class="btn btn--wa btn--block" type="submit">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg>
+              Envoyer sur WhatsApp
+            </button>
+            <p class="form__hint">Aucune donnée n'est enregistrée sur ce site.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= BANDEAU -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2>Un travail à faire aujourd'hui ?</h2>
+          <p>Envoyez votre fichier sur WhatsApp, nous le préparons pendant que vous êtes en route.</p>
+          <div class="cta-band__actions">
+            <a class="btn btn--wa" href="#contact" data-link="whatsapp">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg>
+              Envoyer mon fichier
+            </a>
+            <a class="btn btn--ghost" href="#contact" data-link="tel">
+              <svg aria-hidden="true"><use href="#i-phone"/></svg>
+              Appeler
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================== PIED DE PAGE -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="#accueil" aria-label="M-Tech, retour à l'accueil">
+            <img src="assets/img/logo.svg" alt="" width="40" height="40">
+            <span>M-Tech<span class="brand__sub">Bureautique · Foumban</span></span>
+          </a>
+          <p>Bureautique, impression, infographie, services en ligne, informatique et formation à Kounga, Foumban.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Bureautique</a></li>
+            <li><a href="#services">Infographie</a></li>
+            <li><a href="#services">Services en ligne</a></li>
+            <li><a href="#services">Informatique</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>M-Tech</h4>
+          <ul>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Nous trouver</h4>
+          <ul>
+            <li><span data-config="adresse">Kounga, Foumban — Région de l'Ouest, Cameroun</span></li>
+            <li><a href="#contact" data-link="tel"><span data-config="telephone">+237 6XX XX XX XX</span></a></li>
+            <li><span data-config="horaires">Lundi – Samedi : 7h30 – 19h00 · Dimanche : fermé</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> M-Tech — Foumban, Kounga. Tous droits réservés.</span>
+        <span>Responsable : <span data-config="responsable">Moustafa</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="#contact" data-link="whatsapp" aria-label="Discuter avec M-Tech sur WhatsApp">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
